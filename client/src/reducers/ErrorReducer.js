@@ -1,6 +1,6 @@
 import { API_ERROR } from '../actions/types';
 
-export default (state = [], action) => {
+const ErrorReducer = (state = [], action) => {
   switch (action.type){
     case API_ERROR:
       return [...state, action.payload];
@@ -8,3 +8,5 @@ export default (state = [], action) => {
       return state;
   }
 }
+
+export default ErrorReducer;
