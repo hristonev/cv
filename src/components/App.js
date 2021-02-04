@@ -1,7 +1,8 @@
 import React from 'react';
+import { Container } from 'semantic-ui-react';
 
 const App  = () => {
-  return <p>app</p>
+  return <Container />
 };
 
 export default App;
