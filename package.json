@@ -6,6 +6,7 @@
     "express": "^4.17.1",
     "nodemon": "^2.0.7",
     "sequelize": "^6.5.0",
+    "sqlite3": "^5.0.1",
     "sqlite3-lite": "^2020.8.19"
   },
   "scripts": {
@@ -16,5 +17,6 @@
   "proxy": "http://localhost:5000/",
   "devDependencies": {
     "concurrently": "^5.3.0"
-  }
+  },
+  "type": "module"
 }
