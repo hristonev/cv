@@ -9,18 +9,18 @@ const instance = axios.create({
   }),
   headers: {
     common: {
-      Accept: 'application/ld+json'
+      Accept: 'application/json'
     },
     put: {
-      Accept: 'application/ld+json',
-      'Content-Type': 'application/ld+json'
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
     },
     post: {
-      Accept: 'application/ld+json',
-      'Content-Type': 'application/ld+json'
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
     },
     patch: {
-      Accept: 'application/ld+json',
+      Accept: 'application/json',
       'Content-Type': 'application/merge-patch+json'
     }
   }

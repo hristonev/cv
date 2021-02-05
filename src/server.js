@@ -1,22 +1,27 @@
-// const express = require('express');
-// const bodyParser = require('body-parser');
-// const models = require('./data/models');
 import express from 'express';
-import models from './data/models/index.js';
+import models, { User } from './data/models/index.js';
+import bodyParser from 'body-parser';
 
 const app = express();
 const port = process.env.PORT || 5000;
 
-// app.use(bodyParser.json());app.get('/api/hello', (req, res) => {
-//   res.send({ express: 'Hello From Express' });
-// });
-//
-// app.post('/api/data', (req, res) => {
-//   console.log(req.body);
-//   res.send(
-//     `I received your POST request. This is what you sent me: ${req.body.post}`,
-//   );
-// });
+app.use(bodyParser.json());
+app.get('/api/users', async (req, res) => {
+  User.findAll()
+    .then(users => res.send(users))
+    .catch(err => res.send(err))
+  ;
+});
+
+app.post('/api/users', async (req, res) => {
+  const now = new Date();
+  const user = await User.create({
+    ...req.body,
+    createdAt: now,
+    updatedAt: now
+  });
+  res.send(user);
+});
 
 const promise = models
   .sync()

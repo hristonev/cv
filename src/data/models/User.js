@@ -13,6 +13,15 @@ const User = Model.define(
       type: DataType.STRING(255),
       validate: { isEmail: true },
     },
+    phone: {
+      type: DataType.STRING(255),
+    },
+    first_name: {
+      type: DataType.STRING(255),
+    },
+    last_name: {
+      type: DataType.STRING(255),
+    },
   },
   {
     indexes: [{ fields: ['email'] }],
