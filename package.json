@@ -10,8 +10,8 @@
     "sqlite3-lite": "^2020.8.19"
   },
   "scripts": {
-    "client": "npm start --prefix client",
-    "server": "nodemon server.js",
+    "client": "npm start --prefix src/client",
+    "server": "nodemon --trace-deprecation src/server.js",
     "start": "concurrently \"npm run server\" \"npm run client\""
   },
   "proxy": "http://localhost:5000/",
